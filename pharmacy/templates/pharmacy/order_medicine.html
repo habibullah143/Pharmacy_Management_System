@@ -1,0 +1,21 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<section id="order-medicine">
+    <div class="container">
+        <h2>Order Medicine</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_medicine">Medicine:</label>
+                {{ form.medicine }}
+            </div>
+            <div class="form-group">
+                <label for="id_quantity">Quantity:</label>
+                {{ form.quantity }}
+            </div>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'pharmacy/base.html' %}
+
+{% block content %}
+<section id="medicine-list">
+    <div class="container">
+        <h2>Medicine List</h2>
+        <ul class="medicine-items">
+            {% for medicine in medicines %}
+            <li>
+                <div class="medicine-item">
+                    <h3>{{ medicine.name }}</h3>
+                    <p>Description: {{ medicine.description }}</p>
+                    <p>Price: RS {{ medicine.price }}</p>
+                    <p>Stock: {{ medicine.stock }}</p>
+                </div>
+            </li>
+            {% empty %}
+            <li>No medicines found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
